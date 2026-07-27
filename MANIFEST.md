@@ -75,12 +75,3 @@ No benchmark data, annotation payload, image, audio, or video is included.
 
 Evaluation output is written beneath `results*`/`result*` paths and is ignored.
 Typical files are `predictions.jsonl`, `summary.json`, and `all_results.csv`.
-
-## Explicit exclusions
-
-- Checkpoints, weights, model shards, and generated model artifacts
-- Datasets, cached downloads, media, and archives
-- Evaluation results, logs, judge outputs, and experiment directories
-- Python caches, virtual environments, compiled binaries, and IDE metadata
-- Git history from source or vendored repositories
-- Secrets, tokens, API keys, credentials, and machine-specific configuration
