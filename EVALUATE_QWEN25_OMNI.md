@@ -3,7 +3,7 @@
 Run from the repository root after activating your Python environment:
 
 ```bash
-cd /path/to/OmniEvalKit_Final
+cd /path/to/OmniEvalKit
 ```
 
 Evaluate `Qwen/Qwen2.5-Omni-3B` on `daily_omni`:
