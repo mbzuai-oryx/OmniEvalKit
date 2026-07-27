@@ -43,7 +43,7 @@ class Model(MiniCPMO45WhisperModel):
                 "GEMMA4E2B_ASR_MODEL",
                 os.getenv(
                     "QWEN25VL_ASR_MODEL",
-                    "/vast/users/imran.razzak/Document/Qwen-omni/Qwen-omni3.5/whisper-large-v3-turbo-hf",
+                    "../Qwen-omni3.5/whisper-large-v3-turbo-hf",
                 ),
             ),
         )
