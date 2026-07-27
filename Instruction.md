@@ -187,11 +187,8 @@ provided.
 ### Text, code, and math — 8
 
 `gsm8k`, `gsm8k_socratic`, `math500`, `mbpp`, `mbpp_sanitized`,
-`mbppplus`, `multiple`, `openai_humaneval`.
+`mbppplus`, `multiple`, `openai_humaneval`, `theoremqa`.
 
-### Text with optional image — 1
-
-`theoremqa`.
 
 ## Prepare datasets
 
@@ -240,21 +237,10 @@ metrics are written to each `summary.json`.
 Code datasets use text/ROUGE scoring; generated code is not executed.
 
 ## Known limitations
-
-- `minicpmv45_whisper` currently imports a missing base module.
-- `eval.sh` contains stale internal cases for model folders that are not
-  documented above. Set `MODEL_PATH` explicitly.
-- Qwen3-Omni grounding output may need coordinate postprocessing before
-  RefCOCO, PixMo Point, or PointArena scoring.
+- Qwen3-Omni grounding output need coordinate postprocessing before
+  RefCOCO, PixMo Point, or PointArena scoring, [0-1000].
 - The central runner evaluates samples sequentially.
 
-## Checks
-
-```bash
-python3 run_eval.py --help
-python3 -m unittest discover -s tests -p 'test_*.py' -v
-bash -n eval.sh
-```
 
 ## GitHub and license
 
