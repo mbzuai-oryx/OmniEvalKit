@@ -1,0 +1,2 @@
+from datasets._vision_video_common import SYSTEM_PROMPT_VIDEO_QA as SYSTEM_PROMPT
+from datasets._vision_video_common import build_mcq_prompt as build_prompt

@@ -1,0 +1,2 @@
+_target_: autogaze.algorithms.NTP
+optimize_task_loss_prediction: false

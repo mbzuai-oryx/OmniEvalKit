@@ -1,0 +1,9 @@
+# Install the appropriate PyTorch build for your CUDA, ROCm, or CPU platform first.
+torch
+accelerate
+av
+librosa
+numpy
+opencv-python-headless
+Pillow
+transformers

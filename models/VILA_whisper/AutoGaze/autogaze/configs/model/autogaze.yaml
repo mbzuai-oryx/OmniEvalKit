@@ -1,0 +1,74 @@
+_target_: autogaze.models.autogaze.AutoGaze
+gazing_ratio_config:
+  sample_strategy_during_training: 'fixed'
+  sample_strategy_during_inference: 'fixed'
+  fixed:
+    gazing_ratio: 0.5
+  uniform:
+    gazing_ratio_min: 0
+    gazing_ratio_max: 1
+  exponential:
+    gazing_ratio_min: 0
+    gazing_ratio_max: 1
+    lambda: 10  # p(x) ~ exp(lambda * x). Larger lambda means more focus on smaller gazing ratios.
+gazing_ratio_each_frame_config:
+  sample_strategy_during_training: 'uniform'
+  sample_strategy_during_inference: 'uniform'
+  uniform:
+  dirichlet:
+    alpha: 0.5  # It can be a float (same alpha for all frames) or a list of floats (different alphas for each frame), which in the training bash script should be written in the form of string, e.g., \'10,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3\'.
+  self:
+scales: '224'
+num_vision_tokens_each_frame: 196
+max_num_frames: 16
+use_flash_attn: False
+has_task_loss_requirement_during_training: False
+has_task_loss_requirement_during_inference: False
+task_loss_requirement_config:
+  sample_strategy_during_training: 'fixed'
+  sample_strategy_during_inference: 'fixed'
+  fixed:
+    task_loss_requirement: 0.7
+  uniform:
+    task_loss_requirement_min: 0.6
+    task_loss_requirement_max: 0.9
+gaze_model_config:
+  input_img_size: 224
+  vision_model_config:
+    hidden_dim: 192
+    out_dim: 192
+    depth: 1
+    kernel_size: 16
+    temporal_patch_size: 1
+    trunk_temporal_kernel_size: 3
+    trunk_spatial_kernel_size: 3
+  connector_config:
+    hidden_dim: 192
+  gaze_decoder_config:
+    hidden_size: 192
+    intermediate_size: 384
+    max_position_embeddings: 131072
+    num_attention_heads: 6
+    num_hidden_layers: 4
+    rms_norm_eps: 1e-05
+    rope_scaling:
+      factor: 8.0
+      low_freq_factor: 1.0
+      high_freq_factor: 4.0
+      original_max_position_embeddings: 8192
+      rope_type: 'llama3'
+    rope_theta: 500000.0
+    use_cache: True
+    num_multi_token_pred: 1
+preprocessing:
+  do_resize: True
+  size:
+    shortest_edge: 224
+  do_center_crop: False
+  do_rescale: True
+  rescale_factor: 0.00784313725490196  # 1/127.5
+  offset: True
+  do_normalize: True
+  image_mean: [0.485, 0.456, 0.406]
+  image_std: [0.229, 0.224, 0.225]
+max_batch_size:

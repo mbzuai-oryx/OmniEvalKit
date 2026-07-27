@@ -1,0 +1,4 @@
+_target_: autogaze.algorithms.GRPO
+group_size: 4
+discount_factor: 1
+optimize_task_loss_prediction: false

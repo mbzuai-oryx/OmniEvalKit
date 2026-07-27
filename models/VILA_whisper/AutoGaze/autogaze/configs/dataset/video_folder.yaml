@@ -1,0 +1,15 @@
+_target_: autogaze.datasets.video_folder.VideoFolder
+root: '<video_folder_root>'
+clip_len: 64
+frame_sample_rate: 1
+gt_gazing_pos_paths:
+  train:
+  val:
+random_sample_frame: False
+train_data_aug:
+  aug_type:
+  random_resized_crop:
+    scale_min: 0.08
+    scale_max: 1.0
+    ratio_min: 0.75
+    ratio_max: 1.3333

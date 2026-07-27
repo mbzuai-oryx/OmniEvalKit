@@ -1,0 +1,1 @@
+"""AVHBench AV captioning task."""

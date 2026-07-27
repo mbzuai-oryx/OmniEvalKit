@@ -1,0 +1,29 @@
+_target_: autogaze.tasks.siglip_video_feature_reconstruction.SigLIPVideoFeatureReconstruction
+vision_model: 'google/siglip2-base-patch16-224'
+vision_model_config:
+  scale_embed: True
+  time_embed: True
+  max_num_frames: 256
+  max_embed_batch_size: 64
+  attn_type: 'block_causal'
+recon_model_config:
+  decoder_num_attention_heads: 16
+  decoder_num_hidden_layers: 3
+  decoder_intermediate_size: 3072
+  loss_type: 'l2'
+  loss_weights: '1'
+  l2_loss_config:
+  scale_embed: True
+  time_embed: True
+  max_num_frames: 256
+loss_weights:
+  gazed_patch_loss_weight: 1
+  patch_reconstruction_loss_weight: 1
+scales: '224'
+layer_with_patch_loss: -1
+layer_with_reconstruction_loss: -1
+use_flash_attn: True
+use_flash_attn_vision_model: False
+use_grad_checkpointing: False
+recon_sample_rate: 0.5
+frame_independent_encoding: False

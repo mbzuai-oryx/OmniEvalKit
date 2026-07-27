@@ -1,0 +1,17 @@
+_target_: autogaze.tasks.video_mae_reconstruction.VideoMAEReconstruction
+recon_model: 'facebook/vit-mae-base'
+recon_sample_rate: 1
+attn_mode: 'flash_attention_2'  # flex_attention / sdpa / flash_attention_2 / eager
+recon_model_config:
+  scale_embed: True
+  max_num_frames: 256
+  time_embed: True
+  causal: True
+  loss_type: 'l1'
+  loss_weights: '1'
+  l1_loss_config:
+  dinov2_reg_loss_config:
+    model: 'facebook/dinov2-with-registers-base'
+  siglip2_loss_config:
+    model: 'google/siglip2-base-patch16-224'
+scales: '224'

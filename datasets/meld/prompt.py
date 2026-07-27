@@ -1,0 +1,6 @@
+from datasets._audio_common import SYSTEM_PROMPT_CLASSIFICATION, build_classification_prompt, postprocess_option_prediction
+
+
+SYSTEM_PROMPT = SYSTEM_PROMPT_CLASSIFICATION
+build_prompt = build_classification_prompt
+postprocess_prediction = postprocess_option_prediction

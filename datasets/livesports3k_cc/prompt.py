@@ -1,0 +1,5 @@
+from datasets._audio_common import SYSTEM_PROMPT_VIDEO_CAPTION, build_video_caption_prompt
+
+
+SYSTEM_PROMPT = SYSTEM_PROMPT_VIDEO_CAPTION
+build_prompt = build_video_caption_prompt

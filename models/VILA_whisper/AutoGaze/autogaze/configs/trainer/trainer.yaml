@@ -1,0 +1,28 @@
+_target_: autogaze.trainer.Trainer
+
+batch_size: 256
+per_gpu_max_batch_size: 64
+lr: 3e-4
+min_lr: 1e-5
+lr_schedule: 'linear_w_warmup'
+optimizer: 'sgd'
+train_gaze: True
+train_task: True
+detach_task: False  # Add torch.no_grad() to the task forward function.
+
+val_nsteps: 1000
+save_nsteps: 300
+n_epochs: 10
+logdir: 'exps/'
+exp_name:
+resume: 'auto'
+gaze_weights:
+task_weights:
+seed: 666
+val_only: False
+
+temp_schedule_args:
+    mode: 'exp'
+    exp:
+        temp_start: 1e4
+        temp_end: 1.0
