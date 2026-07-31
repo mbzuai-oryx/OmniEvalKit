@@ -7,3 +7,16 @@ numpy
 opencv-python-headless
 Pillow
 transformers
+deep-translator
+decord
+funasr
+minicpmo-utils>=1.0.5
+qwen-omni-utils
+qwen-vl-utils
+PyYAML
+soundfile
+torchaudio
+vllm
+huggingface-hub
+pandas
+pyarrow
