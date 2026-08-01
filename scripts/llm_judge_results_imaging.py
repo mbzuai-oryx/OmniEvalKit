@@ -21,7 +21,7 @@ from typing import Any, Iterable
 
 
 DEFAULT_ROOT = Path(__file__).resolve().parents[1] / "results_imaging"
-DEFAULT_MODEL = "Qwen/Qwen2.5-3B-Instruct"
+DEFAULT_MODEL = "Qwen/Qwen3.5-27B"
 TARGET_DATASETS = {
     "chartqa",
     "docvqa",

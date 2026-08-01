@@ -331,7 +331,7 @@ class Model:
             audio,
             return_timestamps=needs_long_form,
             chunk_length_s=30 if needs_long_form else None,
-            stride_length_s=5 if needs_long_form else None,
+            stride_length_s=3 if needs_long_form else None,
             generate_kwargs={
                 "task": "transcribe",
                 "do_sample": False,

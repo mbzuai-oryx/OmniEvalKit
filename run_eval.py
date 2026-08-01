@@ -40,7 +40,7 @@ def parse_args():
     parser.add_argument("--dataset", required=True)
     parser.add_argument("--output_dir", default="results")
     parser.add_argument("--llm_judge", default="False")
-    parser.add_argument("--llm_judge_model", default="Qwen/Qwen2.5-3B-Instruct")
+    parser.add_argument("--llm_judge_model", default="Qwen/Qwen3.5-27B")
     parser.add_argument("--model_path", default=None)
     parser.add_argument("--data_dir", default=None)
     parser.add_argument("--max_samples", type=int, default=None)
