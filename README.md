@@ -1,9 +1,8 @@
 <div align="center">
 
-<img src="assets/TFO_logo.png" alt="Training-Free Omni" width="220">
+<img src="assets/TFO_logo.png" alt="Training-Free Omni" width="220"> 
 
 # Training-Free Speech-Centric Omni Understanding with Frozen VLMs
-
 <p align="center">
     <img src="https://i.imgur.com/waxVImv.png" alt="Oryx Video-ChatGPT">
 </p>
@@ -30,7 +29,6 @@ evaluation pipeline.
   <a href="assets/teaser_TFO.mp4">
     <img src="assets/teaser_poster.jpg" alt="Training-Free Omni teaser" width="100%">
   </a><br>
-  <em>Click the image to watch the teaser video.</em>
 </p>
 
 ---
@@ -173,9 +171,6 @@ included in this repository.
 ```
 
 ---
-
-<p align="center">
-  <a href="https://mbzuai.ac.ae">
-    <img src="assets/mbzuai_logo.png" alt="Mohamed bin Zayed University of Artificial Intelligence" width="360">
-  </a>
-</p>
+[<img src="assets/IVAL_logo.png" width="200" height="100">](https://www.ival-mbzuai.com)
+[<img src="assets/Oryx_logo.png" width="100" height="100">](https://github.com/mbzuai-oryx)
+[<img src="assets/mbzuai_logo.png" width="360" height="85">](https://mbzuai.ac.ae)
