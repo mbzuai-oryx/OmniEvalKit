@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Training-Free Omni (TFO) adds speech-centric omni understanding to frozen vision-language models without multimodal training."
+    >
+    <meta
+      name="keywords"
+      content="Training-Free Omni, TFO, omni models, multimodal understanding, frozen VLM, speech understanding"
+    >
+    <meta name="theme-color" content="#f5faff">
+    <meta property="og:title" content="Training-Free Speech-Centric Omni Understanding with Frozen VLMs">
+    <meta
+      property="og:description"
+      content="A plug-and-play, training-free route from audio to strong speech-centric omni understanding."
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/TFO_logo.png">
+    <title>TFO — Training-Free Speech-Centric Omni Understanding</title>
+    <script>document.documentElement.classList.add("js");</script>
+    <link rel="icon" href="assets/TFO_logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="assets/TFO_logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header" id="top">
+      <nav class="nav shell" aria-label="Primary navigation">
+        <a class="brand" href="#top" aria-label="TFO home">
+          <img class="brand-logo" src="assets/TFO_logo.png" alt="">
+          <span>TFO</span>
+        </a>
+
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+          <span class="sr-only">Toggle navigation</span>
+          <span></span><span></span><span></span>
+        </button>
+
+        <div class="nav-links" id="nav-links">
+          <a href="#overview">Overview</a>
+          <a href="#method">Method</a>
+          <a href="#questions">Findings</a>
+          <a href="#results">Results</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="hero">
+        <div class="hero-orb hero-orb-one" aria-hidden="true"></div>
+        <div class="hero-orb hero-orb-two" aria-hidden="true"></div>
+        <div class="shell hero-inner reveal">
+          <div class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            Training-free Omni
+          </div>
+          <h1>
+            <span class="hero-title-line">Training-Free Speech-Centric <span class="title-gradient">Omni</span></span>
+            <span class="hero-title-line"><span class="title-gradient">Understanding</span> with Frozen VLMs</span>
+          </h1>
+          <p class="hero-summary">
+            Turn a vision-language model into a speech-centric omni model without<br class="hero-summary-break">
+            changing its architecture, updating its parameters, or running multimodal re-alignment.
+          </p>
+
+          <div class="authors" role="group" aria-label="Authors">
+            <a href="https://scholar.google.com/citations?user=M-TzFkYAAAAJ&amp;hl=en&amp;oi=sra" target="_blank" rel="noreferrer">Ankan Deria</a>
+            <span class="author-separator" aria-hidden="true">·</span>
+            <a href="https://scholar.google.com/citations?user=yhDdEuEAAAAJ&amp;hl=en&amp;oi=ao" target="_blank" rel="noreferrer">Hanoona Rasheed</a>
+            <span class="author-separator" aria-hidden="true">·</span>
+            <a href="https://scholar.google.com/citations?hl=en&amp;user=LRdrMfoAAAAJ&amp;view_op=list_works&amp;sortby=pubdate" target="_blank" rel="noreferrer">Xilin He</a>
+            <span class="author-separator" aria-hidden="true">·</span>
+            <a href="https://scholar.google.com/citations?user=zvaeYnUAAAAJ&amp;hl=en" target="_blank" rel="noreferrer">Fahad Shahbaz Khan</a>
+            <span class="author-separator" aria-hidden="true">·</span>
+            <a href="https://scholar.google.com/citations?user=M59O9lkAAAAJ&amp;hl=en" target="_blank" rel="noreferrer">Salman Khan</a>
+          </div>
+
+          <img
+            class="institution-logo"
+            src="assets/mbzuai_logo.png"
+            alt="Mohamed bin Zayed University of Artificial Intelligence"
+          >
+
+          <div class="hero-actions" role="group" aria-label="Project links">
+            <!-- Replace # with the paper's arXiv URL after publication. -->
+            <a class="button button-primary paper-link" href="#" aria-disabled="true" title="arXiv link will be added after publication">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M6 3h9l4 4v14H6zM14 3v5h5M9 13h7M9 17h5" />
+              </svg>
+              Paper <span class="link-status">arXiv soon</span>
+            </a>
+            <a class="button button-secondary" href="#teaser">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="9" />
+                <path d="m10 8 6 4-6 4z" />
+              </svg>
+              Watch teaser
+            </a>
+            <a
+              class="button button-secondary"
+              href="https://github.com/ankan8145/OmniEvalKit"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3.3-.4 6.8-1.6 6.8-7A5.4 5.4 0 0 0 19.4 4 5 5 0 0 0 19.3.5S18.2.1 15 1.8a13.4 13.4 0 0 0-7 0C4.8.1 3.7.5 3.7.5A5 5 0 0 0 3.6 4a5.4 5.4 0 0 0-1.4 3.7c0 5.3 3.5 6.5 6.8 7a4.8 4.8 0 0 0-1 3.4v4" />
+              </svg>
+              Code
+            </a>
+            <a class="button button-secondary" href="#results">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 20V10m6 10V4m6 16v-7m4 7H2" />
+              </svg>
+              Explore results
+            </a>
+          </div>
+
+          <div class="hero-stats" role="group" aria-label="Evaluation at a glance">
+            <div>
+              <strong>56</strong>
+              <span>benchmarks</span>
+            </div>
+            <div>
+              <strong>21</strong>
+              <span>languages</span>
+            </div>
+            <div>
+              <strong>5</strong>
+              <span>matched comparisons</span>
+            </div>
+            <div>
+              <strong>0</strong>
+              <span>VLM parameters trained</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section intro-section" id="overview">
+        <div class="shell">
+          <div class="challenge-heading reveal">
+            <div class="section-kicker">Why rethink native Omni training?</div>
+            <h2 class="section-title">Three challenges behind every new Omni model</h2>
+            <p>
+              Moving from a strong VLM to a capable Omni model is not a free upgrade. It
+              introduces recurring alignment costs,<br class="challenge-summary-break">
+              difficult temporal signals, and a risk of losing capabilities the backbone already learned.
+            </p>
+          </div>
+
+          <div class="challenge-grid">
+            <article class="challenge-card reveal">
+              <div class="challenge-topline">
+                <span class="challenge-number">01</span>
+                <span class="challenge-tag">Adaptation cost</span>
+              </div>
+              <h3>Costly and Brittle Adaptation</h3>
+              <p>
+                Advances in stronger VLM backbones do not automatically transfer to existing Omni models, requiring the audio pathway to be repeatedly adapted and realigned for each new backbone.
+              </p>
+              <div class="challenge-question">
+                <span class="challenge-question-label">Research question</span>
+                <strong>Do we need to <span class="question-highlight question-highlight-blue">retrain</span> an Omni model for every new VLM backbone?</strong>
+              </div>
+            </article>
+
+            <article class="challenge-card reveal">
+              <div class="challenge-topline">
+                <span class="challenge-number">02</span>
+                <span class="challenge-tag">Signal alignment</span>
+              </div>
+              <h3>Reliable Audio-Visual Alignment</h3>
+              <p>
+                Reliable audio-visual integration remains difficult because audio is temporally dense, often noisy, and must be precisely aligned with speech and visual events.
+              </p>
+              <div class="challenge-question">
+                <span class="challenge-question-label">Research question</span>
+                <strong>Can audio be <span class="question-highlight question-highlight-green">integrated reliably</span> with spoken content and visual events?</strong>
+              </div>
+            </article>
+
+            <article class="challenge-card reveal">
+              <div class="challenge-topline">
+                <span class="challenge-number">03</span>
+                <span class="challenge-tag">Capability drift</span>
+              </div>
+              <h3>Preserving Existing Capabilities</h3>
+              <p>
+                Jointly modifying the backbone can weaken mature abilities in image and video
+                understanding, visual grounding, coding, mathematics, and domain knowledge.
+              </p>
+              <div class="challenge-question">
+                <span class="challenge-question-label">Research question</span>
+                <strong>Can Omni capabilities be added <span class="question-highlight question-highlight-green">without degrading</span> the VLM's original strengths?</strong>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section teaser-section" id="teaser">
+        <div class="shell">
+          <div class="section-heading reveal">
+            <div>
+              <h2 class="section-title">Teaser</h2>
+            </div>
+            <!-- <p>
+              From raw audio to timestamped language evidence, frozen visual reasoning,
+              and a final answer.
+            </p> -->
+          </div>
+          <div class="video-shell reveal">
+            <video
+              controls
+              playsinline
+              preload="metadata"
+              poster="assets/teaser_poster.jpg"
+              aria-label="Training-Free Omni teaser video"
+            >
+              <source src="assets/teaser_TFO.mp4" type="video/mp4">
+              Your browser does not support HTML5 video.
+            </video>
+            <div class="video-caption">
+              <span><i></i> TFO teaser</span>
+              <!-- <span>00:50 · 1080p</span> -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section method-section" id="method">
+        <div class="shell">
+          <div class="section-heading reveal">
+            <div>
+              <div class="section-kicker">Method</div>
+              <h2 class="section-title">A modular path to omni understanding</h2>
+            </div>
+            <p>
+              <span class="method-design-label">Plug-and-play by design</span>
+              Speech is transformed into reliable language context outside the VLM.
+              Everything mature inside the backbone stays frozen.
+            </p>
+          </div>
+
+          <div class="pipeline reveal" role="group" aria-label="TFO processing pipeline">
+            <article class="pipeline-step">
+              <div class="pipeline-number">01</div>
+              <div class="pipeline-icon audio-icon" aria-hidden="true">
+                <svg viewBox="0 0 44 44" fill="none">
+                  <path d="M7 22h3m3-9v18m5-25v32m5-22v12m5-18v24m5-16v8m5-4h2" />
+                </svg>
+              </div>
+              <h3>Audio + vision</h3>
+              <p>Accept speech or audio alongside images, video frames, and the user query.</p>
+            </article>
+            <div class="pipeline-arrow" aria-hidden="true">→</div>
+            <article class="pipeline-step">
+              <div class="pipeline-number">02</div>
+              <div class="pipeline-icon transcript-icon" aria-hidden="true">
+                <svg viewBox="0 0 44 44" fill="none">
+                  <path d="M9 8h26v28H9zM14 15h16M14 21h13M14 27h10" />
+                </svg>
+              </div>
+              <h3>Whisper routing</h3>
+              <p>Extract transcript segments, language, confidence, and start/end timestamps.</p>
+            </article>
+            <div class="pipeline-arrow" aria-hidden="true">→</div>
+            <article class="pipeline-step pipeline-step-accent">
+              <div class="pipeline-number">03</div>
+              <div class="pipeline-icon frozen-icon" aria-hidden="true">
+                <svg viewBox="0 0 44 44" fill="none">
+                  <path d="M22 5v34M9 12l26 20M35 12 9 32M22 5l-4 4m4-4 4 4m-4 30-4-4m4 4 4-4M9 12l6 1m-6-1 2-6m24 6-6 1m6-1-2-6" />
+                </svg>
+              </div>
+              <h3>Frozen VLM</h3>
+              <p>Fuse transcript, timestamps, visual input, and query through the standard prompt interface.</p>
+              <span class="frozen-badge">Weights frozen</span>
+            </article>
+            <div class="pipeline-arrow" aria-hidden="true">→</div>
+            <article class="pipeline-step">
+              <div class="pipeline-number">04</div>
+              <div class="pipeline-icon answer-icon" aria-hidden="true">
+                <svg viewBox="0 0 44 44" fill="none">
+                  <path d="M8 8h28v22H20l-8 7v-7H8zM15 19l5 5 10-11" />
+                </svg>
+              </div>
+              <h3>Answer</h3>
+              <p>Generate text directly, with optional text-to-speech for a spoken response.</p>
+            </article>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="section questions-section" id="questions">
+        <div class="shell">
+          <div class="section-heading reveal">
+            <div>
+              <div class="section-kicker">Findings</div>
+              <h2 class="section-title">What the study set out to learn</h2>
+            </div>
+            <p>
+              Matched native-omni and frozen-backbone comparisons separate the capability
+              gained from the capability retained.
+            </p>
+          </div>
+
+          <div class="question-list">
+            <article class="question-card reveal">
+              <div class="question-index">Q1</div>
+              <div class="question-body">
+                <p class="question">Can audio routing recover omni understanding without native training?</p>
+                <h3>Yes—when the evidence is primarily speech.</h3>
+                <p>
+                  TFO is competitive on speech-centric audio-visual tasks, raises the
+                  audio-only average in every matched model setting, and improves multilingual
+                  CoVoST2 performance across all five comparisons.
+                </p>
+                <div class="evidence-row">
+                  <span><strong>5 / 5</strong> audio-only averages improve</span>
+                  <span><strong>+6.8 to +18.4</strong> CoVoST2 gains</span>
+                  <span><strong>+13.5</strong> largest audio-only average gain</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="question-card reveal">
+              <div class="question-index">Q2</div>
+              <div class="question-body">
+                <p class="question">Does freezing the VLM preserve capabilities that native omni training can weaken?</p>
+                <h3>Broadly, and across very different capability families.</h3>
+                <p>
+                  TFO retains stronger image averages in all five comparisons, stronger
+                  video averages in four of five, higher medical QA averages in all five,
+                  and higher coding-and-math averages in three of four reported settings.
+                </p>
+                <div class="evidence-row">
+                  <span><strong>5 / 5</strong> image averages improve</span>
+                  <span><strong>5 / 5</strong> medical QA averages improve</span>
+                  <span><strong>4 / 5</strong> video averages improve</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="question-card reveal">
+              <div class="question-index">Q3</div>
+              <div class="question-body">
+                <p class="question">Where do richer acoustic representations remain necessary?</p>
+                <h3>Where a transcript cannot carry the evidence.</h3>
+                <p>
+                  Music, environmental sounds, vocal tone, emotion, and fine-grained
+                  audio-visual matching still benefit from native acoustic representations.
+                  TFO also shifts part of the cost from training to sequential ASR inference.
+                </p>
+                <div class="evidence-row">
+                  <span><strong>MMAR-Bench</strong> declines across variants</span>
+                  <span><strong>≈0.62–0.74 s</strong> Whisper overhead</span>
+                  <span><strong>Reusable</strong> transcripts amortize cost</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section results-section" id="results">
+        <div class="shell wide">
+          <div class="section-heading reveal">
+            <div>
+              <div class="section-kicker">Results</div>
+              <h2 class="section-title">Native Omni vs. TFO</h2>
+            </div>
+            <p>
+              Each pair compares a native omni model with TFO applied to its corresponding
+              frozen VLM backbone.
+            </p>
+          </div>
+
+          <div class="results-toolbar reveal">
+            <div class="chart-legend" role="group" aria-label="Chart legend">
+              <span><i class="legend-swatch native"></i>Native Omni</span>
+              <span><i class="legend-swatch tfo"></i>TFO (ours)</span>
+            </div>
+            <button class="replay-button" id="replay-results" type="button">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20 11a8 8 0 1 0-2.3 5.7M20 4v7h-7" />
+              </svg>
+              Replay
+            </button>
+          </div>
+
+          <div class="results-grid" id="results-grid" aria-live="polite"></div>
+
+          <!-- <p class="results-footnote reveal">
+            Values are the “Average” rows in Tables 1–6 of the manuscript. Table 4 uses
+            the mean of the reported image and video averages. Table 5 has no MiniCPM pair
+            because that comparison is not reported there.
+          </p> -->
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <div class="shell footer-inner">
+        <div>
+          <a class="brand footer-brand" href="#top">
+            <img class="brand-logo" src="assets/TFO_logo.png" alt="">
+            <span>TFO</span>
+          </a>
+          <!-- <p>Training-Free Speech-Centric Omni Understanding with Frozen VLMs</p> -->
+        </div>
+        <div class="footer-logos" role="group" aria-label="Affiliated organizations">
+          <img src="assets/IVAL_logo.png" alt="Intelligent Visual Analytics Lab">
+          <img src="assets/Oryx_logo.png" alt="Oryx">
+          <img src="assets/mbzuai_logo.png" alt="MBZUAI">
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
