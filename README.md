@@ -4,6 +4,10 @@
 
 # Training-Free Speech-Centric Omni Understanding with Frozen VLMs
 
+<p align="center">
+    <img src="https://i.imgur.com/waxVImv.png" alt="Oryx Video-ChatGPT">
+</p>
+
 ### [Ankan Deria](https://scholar.google.com/citations?user=M-TzFkYAAAAJ&hl=en&oi=sra), [Hanoona Abdul Rasheed](https://scholar.google.com/citations?user=yhDdEuEAAAAJ&hl=en&oi=ao), [Xilin He](https://scholar.google.com/citations?hl=en&user=LRdrMfoAAAAJ&view_op=list_works&sortby=pubdate), [Fahad Shahbaz Khan](https://scholar.google.com/citations?user=zvaeYnUAAAAJ&hl=en), [Salman Khan](https://scholar.google.com/citations?user=M59O9lkAAAAJ&hl=en)
 
 ### **Mohamed bin Zayed University of Artificial Intelligence**
