@@ -11,7 +11,7 @@
 
 ### **Mohamed bin Zayed University of Artificial Intelligence**
 
-[![Paper](https://img.shields.io/badge/📄_arXiv-Paper-blue)](https://arxiv.org/abs/XXXX.XXXXX)
+[![Paper](https://img.shields.io/badge/📄_arXiv-Paper-blue)](TFO_omni.pdf)
 [![Website](https://img.shields.io/badge/🌐_Project-Website-87CEEB)](https://mbzuai-oryx.github.io/OmniEvalKit/)
 
 </div>
