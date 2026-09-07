@@ -162,10 +162,10 @@ included in this repository.
 ## 📜 Citation
 
 ```bibtex
-@article{deria2026trainingfree,
+@article{deria2026training,
   title={Training-Free Speech-Centric Omni Understanding with Frozen VLMs},
   author={Deria, Ankan and Rasheed, Hanoona and He, Xilin and Khan, Fahad Shahbaz and Khan, Salman},
-  journal={arXiv preprint},
+  journal={arXiv preprint arXiv:2609.04242},
   year={2026}
 }
 ```
